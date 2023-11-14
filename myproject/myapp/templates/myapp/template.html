@@ -169,13 +169,14 @@
         template: '#author-item-template',
       });
       //router
+      // Set Vue Route
       const routes = [ 
           { component: ArticleList, path: '/article/', }, 
           { component: AuthorList, path: '/author/', }, 
           { component: ArticleItem, path: '/article/:slug/', }, 
           { component: AuthorItem, path: '/author/:slug/', },
       ] 
-      const router = new VueRouter({ mode: 'history', routes: routes,})      
+      const router = new VueRouter({ mode: 'history', routes: routes,})
       
       // app
       const myapp = new Vue({

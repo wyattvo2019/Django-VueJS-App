@@ -265,6 +265,22 @@ urlpatterns = [
 ]
 ```
 
+## 12. Set vue router
+```
+#myproject/myapp/templates/myapp/template.html
+<scrip>
+      //router
+      // Set Vue Route
+      const routes = [ 
+          { component: ArticleList, path: '/article/', }, 
+          { component: AuthorList, path: '/author/', }, 
+          { component: ArticleItem, path: '/article/:slug/', }, 
+          { component: AuthorItem, path: '/author/:slug/', },
+      ] 
+      const router = new VueRouter({ mode: 'history', routes: routes,})
+</scrip>
+```
+
  python manage.py createsuperuser
 
 pip freeze > requirements.txt
