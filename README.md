@@ -52,6 +52,16 @@ class Author(models.Model):
 * python manage.py makemigrations ***# Create new migration based on the change to models***
 * python manage.py migrate ***# Apply migrations***
 
+## 5. Register to use those above models in admin site
+```
+# myapp/admin.py
+from django.contrib import admin 
+from .models import Article
+from .models import Author 
+admin.site.register(Article)
+admin.site.register(Author)
+```
+
  python manage.py createsuperuser
 
 pip freeze > requirements.txt
