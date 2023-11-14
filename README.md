@@ -293,7 +293,32 @@ urlpatterns = [
   }).$mount('#myapp');
 </script>
 ```
-
+## 14. Register app to setting
+* Register myapp to myproject
+```
+#myproject/myproject/settings.py
+INSTALLED_APPS = [
+    ........
+    'myapp.apps.MyappConfig',
+]
+```
+* I also change DATABASES because I use mySQL, but you can ignore if you don't want to use
+```
+#myproject/myproject/settings.py
+DATABASES = {  
+    'default': {  
+        'ENGINE': 'django.db.backends.mysql',  
+        'NAME': 'DjangoVueJSApp',  
+        'USER': 'root',  
+        'PASSWORD': 'password',  
+        'HOST': '127.0.0.1',  
+        'PORT': '3306',  
+        'OPTIONS': {  
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
+        }  
+    }  
+}
+```
 
  python manage.py createsuperuser
 
