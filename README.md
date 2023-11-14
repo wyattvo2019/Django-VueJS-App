@@ -3,6 +3,18 @@
 Learn from:
 https://zephyrnet.com/how-to-prototype-a-web-app-with-django-and-vue-js/
 ```
+## 0. Quick start
+After clone this repo, please install virtual environment in it.
+```
+* virtualenv venv
+* source venv/bin/activate
+```
+Install packges in requirements.txt by this command:
+```
+pip install -r requirements.txt
+```
+Ok. Let jump to do Step 15 and 16 to see the final result.
+If you want to do it from start, let go from Step 1.
 
 ## 1. Install env
 * virtualenv venv
