@@ -281,6 +281,20 @@ urlpatterns = [
 </scrip>
 ```
 
+## 13. Register vue app
+```
+#myproject/myapp/templates/myapp/template.html
+<script>
+  // app
+  // Register Vue app
+  const myapp = new Vue({
+    router,
+    store,
+  }).$mount('#myapp');
+</script>
+```
+
+
  python manage.py createsuperuser
 
 pip freeze > requirements.txt
