@@ -123,9 +123,10 @@
       </div>
     </template> 
     <!-- Vue app -->
-    {% comment %} 
+    
     <script>
       // store
+      // Create Vuex Store in Django template
       const store = new Vuex.Store({ 
         state: { 
           authors: [ 
@@ -144,7 +145,7 @@
               return state.authors.find(authors => authors.slug === slug) }, 
           }
       })
-      {% endcomment %}
+
       // components ArticleList, AuthorList, ArticleItem, AuthorItem
       ArticleList = Vue.component('article-list', {
         data: function () { return { articles: store.state.articles } },

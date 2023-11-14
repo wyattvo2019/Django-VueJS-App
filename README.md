@@ -222,6 +222,32 @@ def frontend(request):
   </script>
 ```
 
+## 10. Create Vuex Store in Django template
+```
+<script>
+#myproject/myapp/templates/myapp/template.html
+  // Create Vuex Store in Django template
+  const store = new Vuex.Store({ 
+    state: { 
+      authors: [ 
+        {% for author in authors %} 
+          { name: '{{ author.name }}', slug: '{{ author.slug }}', }, 
+        {% endfor %} ], 
+      articles: [ 
+        {% for article in articles %} 
+          { content: '{{ article.content | linebreaksbr }}', name: '{{ article.name }}', slug: '{{ article.slug }}', }, 
+        {% endfor %} ], 
+      }, 
+      getters: { 
+        getArticleBySlug: (state) => (slug) => { 
+          return state.articles.find(articles => articles.slug === slug) }, 
+        getAuthorBySlug: (state) => (slug) => { 
+          return state.authors.find(authors => authors.slug === slug) }, 
+      }
+  })
+</script>
+```
+
 
  python manage.py createsuperuser
 
