@@ -320,6 +320,13 @@ DATABASES = {
 }
 ```
 
- python manage.py createsuperuser
+## 15. Create Django supper user
+* python manage.py createsuperuser
 
-pip freeze > requirements.txt
+## 16. Run app
+Use the command
+* python manage.py runserver
+```And then go to http://127.0.0.1:8000/admin/. After login, let create at least 2 authors and 2 artical for each author
+```
+Finally, go to http://127.0.0.1:8000 and see the final result
+
