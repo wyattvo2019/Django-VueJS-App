@@ -10,7 +10,7 @@ https://zephyrnet.com/how-to-prototype-a-web-app-with-django-and-vue-js/
 * pip install --upgrade pip
 * python -m pip install Django   # Install Django
 
-## 1. Create python project name myproject, python app myappp
+## 2. Create python project name myproject, python app myappp
 * django-admin startproject myproject #Create project name myproject
 * cd myproject
 * django-admin startapp myapp # Create app name my app
@@ -26,7 +26,7 @@ The folder structure
   |- README.md
   |- requirements.txt
 ```
-## 1. Create 2 models Artical and Author in myapp/models.py
+## 3. Create 2 models Artical and Author in myapp/models.py
 
 ```
 **myapp/models.py**
@@ -48,9 +48,9 @@ class Author(models.Model):
     return '%s' % self.name
 ```
 
-## Run to migration 
-python manage.py makemigrations
-python manage.py migrate
+## 4. Run to migration 
+* python manage.py makemigrations ***# Create new migration based on the change to models***
+* python manage.py migrate ***# Apply migrations***
 
  python manage.py createsuperuser
 
