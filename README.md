@@ -292,6 +292,36 @@ urlpatterns = [
       const router = new VueRouter({ mode: 'history', routes: routes,})
 </scrip>
 ```
+Set the app content, where to show the main content of app
+```
+#myproject/myapp/templates/myapp/template.html
+      <h1>Prototyping a Web App with Django and Vue.js</h1>
+      <!-- Content -->
+      <div id="myapp">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <router-link
+                class="nav-link text-primary"
+                to="/author/"
+              >
+                Go to Authors
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link text-primary"
+                to="/article/"
+              >
+                Go to Articles
+              </router-link>
+            </li>
+          </ul>
+        </nav>
+        <br />
+        <router-view></router-view>
+      </div>
+```
 
 ## 13. Register vue app
 ```
