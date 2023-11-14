@@ -248,6 +248,22 @@ def frontend(request):
 </script>
 ```
 
+## 11. Update URL
+```
+#myproject/myproject/urls.py
+from django.contrib import admin
+from django.urls import path 
+# don't forget to import the app's view!
+from myapp import views as myapp_views 
+urlpatterns = [ 
+    path('admin/', admin.site.urls), # paths for our app
+    path('', myapp_views.frontend),
+    path('article/', myapp_views.frontend),
+    path('author/', myapp_views.frontend),
+    path('article/<slug:slug>/', myapp_views.frontend), 
+    path('author/<slug:slug>/', myapp_views.frontend),
+]
+```
 
  python manage.py createsuperuser
 
