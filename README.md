@@ -4,13 +4,13 @@ Learn from:
 https://zephyrnet.com/how-to-prototype-a-web-app-with-django-and-vue-js/
 ```
 
-## Install env
+## 1. Install env
 * virtualenv venv
 * source venv/bin/activate       # Active the venv
 * pip install --upgrade pip
 * python -m pip install Django   # Install Django
 
-## Create python project name myproject, python app myappp
+## 1. Create python project name myproject, python app myappp
 * django-admin startproject myproject #Create project name myproject
 * cd myproject
 * django-admin startapp myapp # Create app name my app
@@ -26,7 +26,7 @@ The folder structure
   |- README.md
   |- requirements.txt
 ```
-## Create 2 models Artical and Author in myapp/models.py
+## 1. Create 2 models Artical and Author in myapp/models.py
 
 ```
 **myapp/models.py**
