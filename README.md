@@ -29,7 +29,7 @@ The folder structure
 ## 3. Create 2 models Artical and Author in myapp/models.py
 
 ```
-**myapp/models.py**
+#myproject/myapp/models.py
 from django.db import models
 class Article(models.Model): 
   """Table schema to store articles.""" 
@@ -54,7 +54,7 @@ class Author(models.Model):
 
 ## 5. Register to use those above models in admin site
 ```
-# myapp/admin.py
+#myproject/myapp/admin.py
 from django.contrib import admin 
 from .models import Article
 from .models import Author 
@@ -64,7 +64,7 @@ admin.site.register(Author)
 
 ## 6. Write view function to redirect
 ```
-#myapp/views.py
+#myproject/myapp/views.py
 from django.shortcuts import render
 from .models import Article
 from .models import Author
@@ -114,10 +114,83 @@ def frontend(request):
     <!-- Vue templates -->
     
     <!-- Vue app -->
-    
+
   </body>
 </html>
 
+```
+
+## 8. Create vuejs template for artical-list, author-list, artical-detail, auther-detail
+```
+#myproject/myapp/templates/myapp/template.html
+    <!-- Vue templates -->
+    <template id="article-list-template">
+      <div class="article-list">
+        <h2>Articles</h2>
+        <article-item
+          v-for="article in articles" 
+          v-bind:key="article.slug" 
+          v-bind:name="article.name" 
+          v-bind:slug="article.slug" 
+          v-bind:content="article.content" 
+        ></article-item>
+      </div>
+    </template>
+    <template id="author-list-template">
+      <div class="author-list">
+        <h2>Authors</h2>
+        <author-item 
+          v-for="author in authors" 
+          v-bind:key="author.slug" 
+          v-bind:name="author.name" 
+          v-bind:slug="author.slug" 
+        ></author-item>
+      </div>
+    </template>
+    <template id="article-item-template">
+      <div class="article-item">
+        <span v-if="$route.params.slug">
+          <h3>
+            <router-link 
+              v-bind:to="'/article/' + $route.params.slug + '/'" v-html="$store.getters.getArticleBySlug($route.params.slug)['name']"
+            ></router-link>
+          </h3>
+          <div v-html="$store.getters.getArticleBySlug($route.params.slug)['content']"></div>
+        </span>
+        <span v-else>
+          <h3>
+            <router-link 
+              v-bind:to="'/article/' + slug + '/'" 
+              v-html="name"
+            ></router-link>
+          </h3>
+          <div v-html="content"></div>
+          <hr />
+        </span>
+      </div>
+    </template>
+    <template id="author-item-template">
+      <div class="author-item">
+        <span v-if="$route.params.slug">
+          <b>
+            <router-link 
+              v-bind:to="'/author/' + $route.params.slug + '/'"> 
+                [[ $store.getters.getAuthorBySlug($route.params.slug)['name'] ]]
+            </router-link>
+          </b>
+          ([[ $route.params.slug ]]) 
+        </span>
+        <span v-else>
+          <b>
+            <router-link 
+              v-bind:to="'/author/' + slug + '/'"> 
+                [[ name ]]
+            </router-link>
+          </b>
+          ([[ slug ]]) 
+        </span>
+      </div>
+    </template> 
 ```
  python manage.py createsuperuser
 

@@ -55,10 +55,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.6.0/vue-router.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/2.5.0/vuex.js"></script>
     <!-- Vue templates -->
-    {% comment %} <template id="article-list-template">
+    <template id="article-list-template">
       <div class="article-list">
         <h2>Articles</h2>
-        <article-item 
+        <article-item
           v-for="article in articles" 
           v-bind:key="article.slug" 
           v-bind:name="article.name" 
@@ -121,7 +121,7 @@
           ([[ slug ]]) 
         </span>
       </div>
-    </template> {% endcomment %}
+    </template> 
     <!-- Vue app -->
     {% comment %} <script>
       // store
