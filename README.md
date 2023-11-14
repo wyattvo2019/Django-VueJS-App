@@ -192,6 +192,37 @@ def frontend(request):
       </div>
     </template> 
 ```
+
+## 9. Create components ArticleList, AuthorList, ArticleItem, AuthorItem use above
+```
+<!-- Vue app -->
+  <script>
+      // components ArticleList, AuthorList, ArticleItem, AuthorItem
+      ArticleList = Vue.component('article-list', {
+        data: function () { return { articles: store.state.articles } },
+        template: '#article-list-template',
+      });
+
+      AuthorList = Vue.component('author-list', {
+        data: function () { return { authors: store.state.authors } },
+        template: '#author-list-template',
+      });
+
+      ArticleItem = Vue.component('article-item', {
+        delimiters: ['[[', ']]'],
+        props: ['name', 'slug', 'content'],
+        template: '#article-item-template',
+      });
+
+      AuthorItem = Vue.component('author-item', {
+        delimiters: ['[[', ']]'],
+        props: ['name', 'slug'],
+        template: '#author-item-template',
+      });
+  </script>
+```
+
+
  python manage.py createsuperuser
 
 pip freeze > requirements.txt

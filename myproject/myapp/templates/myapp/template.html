@@ -123,7 +123,8 @@
       </div>
     </template> 
     <!-- Vue app -->
-    {% comment %} <script>
+    {% comment %} 
+    <script>
       // store
       const store = new Vuex.Store({ 
         state: { 
@@ -143,12 +144,12 @@
               return state.authors.find(authors => authors.slug === slug) }, 
           }
       })
-
-      // components
+      {% endcomment %}
+      // components ArticleList, AuthorList, ArticleItem, AuthorItem
       ArticleList = Vue.component('article-list', {
         data: function () { return { articles: store.state.articles } },
         template: '#article-list-template',
-      });      
+      });
 
       AuthorList = Vue.component('author-list', {
         data: function () { return { authors: store.state.authors } },
@@ -180,6 +181,6 @@
         router,
         store,
       }).$mount('#myapp');
-    </script> {% endcomment %}
+    </script> 
   </body>
 </html>
